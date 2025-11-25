@@ -13,12 +13,12 @@
             --secondary-color: #347c65;
             --accent-color: #047857;
             --dark-bg: #022c22;
-            --light-bg: #f0fdf4;
+            --light-bg: #72aa83;
             --text-dark: #1f2937;
             --text-light: #6b7280;
             --card-bg: #ffffff;
             --gradient: linear-gradient(135deg, #065f46 0%, #047857 100%);
-            --finance-gradient: linear-gradient(135deg, #ecfdf5 0%, #00572a 100%);
+            --finance-gradient: linear-gradient(135deg, #c3f8df 0%, #00572a 100%);
         }
 
         * {
@@ -203,6 +203,11 @@
             margin-top: 3rem;
         }
 
+        /* Architecture Section - 2 columns */
+        .architecture .card-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         .card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -320,7 +325,7 @@
         /* Contributors */
         .contributors-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -408,6 +413,16 @@
             }
 
             .uml-diagrams-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Make architecture grid single column on mobile */
+            .architecture .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Make contributors grid single column on mobile */
+            .contributors-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -508,31 +523,33 @@
                     <p><strong>Technologies:</strong> Firebase for real-time data saving, Android Studio for development</p>
                     <p><strong>AI Integration:</strong> Ollama API for financial insights and feedback</p>
                 </div>
-                <div class="card fade-in">
-                    <h3>UML Diagrams</h3>
-                    <p><strong>Domain Model:</strong> Core business entities and their relationships including User, Expense, Budget, and SavingsCircle.</p>
-                    <p><strong>Detailed Class Diagram:</strong> Complete system architecture with all classes, methods, and relationships.</p>
-                    <p><strong>Sequence Diagrams:</strong> Interaction flows for expense logging and savings circle creation processes.</p>
-                    <div class="uml-diagrams-grid">
-                        <div class="uml-diagram-card fade-in">
-                            <h4>Domain Model</h4>
-                            <img src="images/domainmodel.png" alt="SpendWise Domain Model">
-                        </div>
-                        <div class="uml-diagram-card fade-in">
-                            <h4>Detailed Class Diagram</h4>
-                            <img src="images/dcd.png" alt="Detailed Class Diagram">
-                        </div>
-                        <div class="uml-diagram-card fade-in">
-                            <h4>Expense Logging Sequence</h4>
-                            <img src="images/expensesd.png" alt="Expense Sequence Diagram">
-                        </div>
-                        <div class="uml-diagram-card fade-in">
-                            <h4>Savings Circle Sequence</h4>
-                            <img src="images/savingscirclesd.png" alt="Savings Circle Sequence Diagram">
-                        </div>
-                    </div>
-                </div>
             </div>
+            
+            <!-- UML Diagrams Full Width Section -->
+            <div class="card fade-in" style="margin-top: 3rem;">
+                <h3>UML Diagrams</h3>
+                <p><strong>Domain Model:</strong> Core business entities and their relationships including User, Expense, Budget, and SavingsCircle.</p>
+                <p><strong>Detailed Class Diagram:</strong> Complete system architecture with all classes, methods, and relationships.</p>
+                <p><strong>Sequence Diagrams:</strong> Interaction flows for expense logging and savings circle creation processes.</p>
+            </div>
+            
+            <div class="uml-diagrams-grid">
+                <div class="uml-diagram-card fade-in">
+                    <h4>Domain Model</h4>
+                    <img src="images/domainmodel.png" alt="SpendWise Domain Model">
+                </div>
+                <div class="uml-diagram-card fade-in">
+                    <h4>Detailed Class Diagram</h4>
+                    <img src="images/dcd.png" alt="Detailed Class Diagram">
+                </div>
+                <div class="uml-diagram-card fade-in">
+                    <h4>Expense Logging Sequence</h4>
+                    <img src="images/expensesd.png" alt="Expense Sequence Diagram">
+                </div>
+                <div class="uml-diagram-card fade-in">
+                    <h4>Savings Circle Sequence</h4>
+                    <img src="images/savingscirclesd.png" alt="Savings Circle Sequence Diagram">
+                </div>
         </div>
     </section>
 
@@ -548,7 +565,7 @@
                     </div>
                     <div class="ui-card-body">
                         <p>The main dashboard provides an at-a-glance view of current spending, budget status, and financial goals. Features interactive charts, quick expense entry, and budget progress indicators tailored for student finances.</p>
-                        <img src="dashboard.png" alt="Dashboard Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
+                        <img src="images/dashboard.png" alt="Dashboard Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
                     </div>
                 </div>
                 <div class="ui-card fade-in">
@@ -557,8 +574,8 @@
                         <p>Intuitive daily expense logging and categorization</p>
                     </div>
                     <div class="ui-card-body">
-                        <p>Easy expense entry with photo capture, automatic categorization, and receipt scanning. Users can quickly log daily expenses with smart category suggestions and spending pattern analysis.</p>
-                        <img src="expenselog.png" alt="Expense Log Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
+                        <p>Streamlined expense entry with photo capture, automatic categorization, and receipt scanning. Users can quickly log daily expenses with smart category suggestions and spending pattern analysis.</p>
+                        <img src="images/expenselog.png" alt="Expense Log Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
                     </div>
                 </div>
                 <div class="ui-card fade-in">
@@ -568,7 +585,7 @@
                     </div>
                     <div class="ui-card-body">
                         <p>Create and manage multiple budgets for different spending categories. Features include spending alerts, budget recommendations, and progress visualization designed for student lifestyles.</p>
-                        <img src="budgets.png" alt="Budget Planning Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
+                        <img src="images/budgets.png" alt="Budget Planning Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
                     </div>
                 </div>
                 <div class="ui-card fade-in">
@@ -578,7 +595,7 @@
                     </div>
                     <div class="ui-card-body">
                         <p>Set personal savings goals or join savings groups for shared financial objectives. Track savings progress, manage goal milestones, and stay motivated with achievement badges.</p>
-                        <img src="savingscircle.png" alt="Savings Circle Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
+                        <img src="images/savingscircle.png" alt="Savings Circle Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
                     </div>
                 </div>
                 <div class="ui-card fade-in">
@@ -588,7 +605,7 @@
                     </div>
                     <div class="ui-card-body">
                         <p>AI-powered assistant provides personalized budgeting advice, spending insights, and financial tips tailored for students. Natural language interface for easy financial guidance.</p>
-                        <img src="chatbot.png" alt="AI Assistant Chatbot Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
+                        <img src="images/chatbot.png" alt="AI Assistant Chatbot Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
                     </div>
                 </div>
             </div>
