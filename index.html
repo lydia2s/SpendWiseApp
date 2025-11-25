@@ -352,6 +352,39 @@
             font-weight: bold;
         }
 
+        /* UML Diagram Styles */
+        .uml-diagrams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .uml-diagram-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .uml-diagram-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .uml-diagram-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            background: white;
+            padding: 0.5rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-menu {
@@ -371,6 +404,10 @@
             }
             
             .ui-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .uml-diagrams-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -473,9 +510,27 @@
                 </div>
                 <div class="card fade-in">
                     <h3>UML Diagrams</h3>
-                    <p><strong>Class Diagram:</strong> Detailed representation of core entities including User, Expense, Budget, and SavingsCircle classes with their relationships and methods.</p>
-                    <p><strong>Sequence Diagram:</strong> Interaction flow for expense logging and budget validation processes.</p>
-                    <p><em>Note: Insert your actual UML diagrams here as images</em></p>
+                    <p><strong>Domain Model:</strong> Core business entities and their relationships including User, Expense, Budget, and SavingsCircle.</p>
+                    <p><strong>Detailed Class Diagram:</strong> Complete system architecture with all classes, methods, and relationships.</p>
+                    <p><strong>Sequence Diagrams:</strong> Interaction flows for expense logging and savings circle creation processes.</p>
+                    <div class="uml-diagrams-grid">
+                        <div class="uml-diagram-card fade-in">
+                            <h4>Domain Model</h4>
+                            <img src="images/domainmodel.png" alt="SpendWise Domain Model">
+                        </div>
+                        <div class="uml-diagram-card fade-in">
+                            <h4>Detailed Class Diagram</h4>
+                            <img src="images/dcd.png" alt="Detailed Class Diagram">
+                        </div>
+                        <div class="uml-diagram-card fade-in">
+                            <h4>Expense Logging Sequence</h4>
+                            <img src="images/expensesd.png" alt="Expense Sequence Diagram">
+                        </div>
+                        <div class="uml-diagram-card fade-in">
+                            <h4>Savings Circle Sequence</h4>
+                            <img src="images/savingscirclesd.png" alt="Savings Circle Sequence Diagram">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -502,7 +557,7 @@
                         <p>Intuitive daily expense logging and categorization</p>
                     </div>
                     <div class="ui-card-body">
-                        <p>Streamlined expense entry with photo capture, automatic categorization, and receipt scanning. Users can quickly log daily expenses with smart category suggestions and spending pattern analysis.</p>
+                        <p>Easy expense entry with photo capture, automatic categorization, and receipt scanning. Users can quickly log daily expenses with smart category suggestions and spending pattern analysis.</p>
                         <img src="expenselog.png" alt="Expense Log Screenshot" style="width: 100%; max-width: 300px; height: auto; border-radius: 8px; margin-top: 1rem;">
                     </div>
                 </div>
